@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SchoolManagerApp.Models
 {
@@ -12,6 +13,8 @@ namespace SchoolManagerApp.Models
         public DateTime DatumRodenja { get; set; }
 
         public string Email { get; set; } = string.Empty;
+
+        [Column(TypeName = "decimal(5,2)")]
         public decimal Prosjek { get; set; }
     }
 }
