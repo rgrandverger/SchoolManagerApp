@@ -2,57 +2,37 @@
 @model SchoolManagerApp.Pages_Ucenici.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Popis učenika";
 }
 
-<h1>Index</h1>
+<h1>Popis učenika</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-primary">Dodaj novog učenika</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Ucenik[0].Ime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ucenik[0].Prezime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ucenik[0].DatumRodenja)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ucenik[0].Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ucenik[0].Prosjek)
-            </th>
-            <th></th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Datum rođenja</th>
+            <th>Email</th>
+            <th>Prosjek</th>
+            <th>Akcije</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Ucenik) {
         <tr>
+            <td>@Html.DisplayFor(modelItem => item.Ime)</td>
+            <td>@Html.DisplayFor(modelItem => item.Prezime)</td>
+            <td>@Html.DisplayFor(modelItem => item.DatumRodenja)</td>
+            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+            <td>@Html.DisplayFor(modelItem => item.Prosjek)</td>
             <td>
-                @Html.DisplayFor(modelItem => item.Ime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prezime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DatumRodenja)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prosjek)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id" onclick="return potvrdiBrisanje('@item.Ime @item.Prezime')">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Uredi</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Detalji</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id" onclick="return potvrdiBrisanje('@item.Ime @item.Prezime')">Obriši</a>
             </td>
         </tr>
 }

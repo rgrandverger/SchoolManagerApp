@@ -2,48 +2,38 @@
 @model SchoolManagerApp.Pages_Ucenici.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalji učenika";
 }
 
-<h1>Details</h1>
+<h1>Detalji učenika</h1>
 
 <div>
-    <h4>Ucenik</h4>
+    <h4>Podaci o učeniku</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Ucenik.Ime)
-        </dt>
+        <dt class="col-sm-2">Ime</dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Ucenik.Ime)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Ucenik.Prezime)
-        </dt>
+        <dt class="col-sm-2">Prezime</dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Ucenik.Prezime)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Ucenik.DatumRodenja)
-        </dt>
+        <dt class="col-sm-2">Datum rođenja</dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Ucenik.DatumRodenja)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Ucenik.Email)
-        </dt>
+        <dt class="col-sm-2">Email</dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Ucenik.Email)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Ucenik.Prosjek)
-        </dt>
+        <dt class="col-sm-2">Prosjek</dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Ucenik.Prosjek)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Ucenik.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Ucenik.Id">Uredi</a> |
+    <a asp-page="./Index">Povratak na popis</a>
 </div>
