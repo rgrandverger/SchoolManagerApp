@@ -2,3 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+function potvrdiBrisanje(ime) {
+    return confirm("Jeste li sigurni da želite obrisati učenika: " + ime + "?");
+}
