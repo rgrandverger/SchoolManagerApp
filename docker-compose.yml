@@ -1,0 +1,8 @@
+services:
+  schoolmanagerapp:
+    build: .
+    ports:
+      - "5055:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      
